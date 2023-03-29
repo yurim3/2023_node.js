@@ -1,19 +1,12 @@
 const http = require('http');
-const fs = require('fs');
+// const fs = require('fs');
+const url = require('url');
 
 const app = http.createServer(function(req, res) {
-    let url = req.url;
-
-    if(url === '/')
-        url = '/index.html';
-
-    if(url === '/favicon.ico')
-        return res.writeHead(404);
-        
-    res.writeHead(200);
-    // __dirname: 'D:/user/2023 node.js/문법' + url: /index.html
-    const htmlCode = fs.readFileSync(__dirname + url);
-    res.end(htmlCode);
+    let _url = req.url; //문자열 형태
+    //문자열 형태의 _url를 object 형태로 변환
+    let queryData = url.parse(_url, true).query;
+    res.end(queryData.id);
 });
 
 app.listen(3333);
