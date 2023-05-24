@@ -26,7 +26,7 @@ const server = http.createServer(function(req, res) {
   }
   else if(req.url === '/food') {
     ejs.renderFile(path.join(__dirname, 'template', 'food.ejs')
-    , {food})
+    , {food : food})
     .then((data) => res.end(data));
   }
   else {
