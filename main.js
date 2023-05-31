@@ -1,8 +1,16 @@
 const express = require('express');
 const app = express();
 
-app.get('/', function(req, res) {
-    res.send("방가");
+// 모든 경로에 요청
+app.get('*', function (req, res, next) {
+    console.log('다들');
+    next();
+})
+
+// 루트(/) 경로에 요청
+app.get('/', function (req, res, next) {
+    console.log('진행시켜');
+    next();
 });
 
 app.listen(3333);
