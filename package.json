@@ -1,13 +1,13 @@
 {
   "name": "2023-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "2023NODEJS",
   "main": "./main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./mysql/mysql.js"
   },
-  "author": "",
+  "author": "yurim",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.1.4",
