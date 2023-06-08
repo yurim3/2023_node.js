@@ -45,15 +45,24 @@ const updateData = {
   deaths: 10,
 };
 
+// pool
+//   .query("UPDATE player SET ? WHERE name = ?", [updateData, "bengi"])
+//   .then(() => {
+//     console.log("UPDATE 성공");
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
+
 pool
-  .query("UPDATE player SET ? WHERE name = ?", [updateData, "bengi"])
+  .query("DELETE FROM player WHERE name = ?", "sungwoong")
   .then(() => {
-    console.log("UPDATE 성공");
+    console.log("DELETE 성공");
   })
   .catch((err) => {
     console.error(err);
   });
-
+  
 pool
   .query("SELECT * FROM player")
   .then(([results]) => {
