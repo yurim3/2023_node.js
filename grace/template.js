@@ -19,14 +19,12 @@ const server = http.createServer(function(req, res) {
 
   if(req.url === '/') {
     // renderFile(ejs대상경로, ejs에 넘겨줄 데이터)
-    ejs.renderFile(path.join(__dirname, 'template', 'index.ejs')
-    , {name: index.name, here: index.here})
+    ejs.renderFile(path.join(__dirname, 'template', 'index.ejs'), {name: index.name, here: index.here})
     .then((data) => res.end(data)); // 데이터를 넘겨받은 ejs코드(data)를 클라이언트에게 보낸다.
 
   }
   else if(req.url === '/food') {
-    ejs.renderFile(path.join(__dirname, 'template', 'food.ejs')
-    , {food : food})
+    ejs.renderFile(path.join(__dirname, 'template', 'food.ejs'), {food : food})
     .then((data) => res.end(data));
   }
   else {
