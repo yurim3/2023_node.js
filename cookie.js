@@ -8,7 +8,7 @@ app.get("/set", (req, res) => {
   res.send("쿠키 set");
 });
 
-// 쿠기 읽기
+// 쿠키 읽기
 app.get("/get", (req, res)=>{
   const cookie = req.headers.cookie;
   if(cookie) {
